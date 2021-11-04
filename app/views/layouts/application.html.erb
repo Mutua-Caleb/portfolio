@@ -16,13 +16,27 @@
 
   <body>
     <header id = 'main_navigation' class = 'clearfix' >
-      <a href="index.html" class = 'name'>Caleb Kivindyo</a>
+    <%= link_to "Caleb Kivindyo", root_path, class: "name"%>
+     
       <nav>
         <%= link_to "Articles", posts_path %>
         <a href="#">Projects</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
+
     <%= yield %>
+
+
+<footer id = 'main_footer'>
+  <p class="copyright">&copy; 2021 Caleb Kivindyo</p>
+  <nav>
+    <a href="https://twitter.com/calebkivindyo" target ="_blank" ><i class="bi bi-twitter"></i></a>
+    <a href="https://www.linkedin.com/in/caleb-kivindyo/?originalSubdomain=ke" target ="_blank" ><i class="bi bi-linkedin"></i></a>
+    <a href="https://github.com/Mutua-Caleb" target= "_blank" ><i class="bi bi-github"></i></a>
+  </nav>
+</footer>
+
+
   </body>
 </html>
