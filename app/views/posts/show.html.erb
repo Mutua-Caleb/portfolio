@@ -11,13 +11,16 @@
 
         <div id="share_box">
           <p>Share The DO list</p>
-          <a onclick= "javascsript:window.open('https://twitter.com/share?text=<%= @post.title %> by @calebkivindyo = &amp;url=<%= url_for([@post, {only_path: false}]) %>', '_blank','width=800, height=500, top=200, left=300');void(0); ">
-          <i class="bi bi-twitter"></i>
-          </a>
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-whatsapp"></i></a>
+              <a onclick="javascript:window.open('https://twitter.com/share?text=<%= @post.title %> by @calebkivindyo - &amp;url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="bi bi-twitter"></i></a>
+              <!-- Facebook -->
+              <a onclick="javascript:window.open('https://www.facebook.com/sharer.php?u=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="bi bi-facebook"></i></a>
+              <%# whatsapp %>
+              <a onclick="javascript:window.open('https://web.whatsapp.com/share?url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="bi bi-whatsapp"></i></a>
+
         </div>
         <hr>
+
+        <%= render 'disqus' %>
      </div>
 
      <%= link_to "Edit", edit_post_path(@post) %>
