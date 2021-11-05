@@ -21,12 +21,12 @@
       </div>
       <div class="col-3 homepage_content">
         <h2>Stuff I've built</h2>
-        <hr>
-        <h3><a href="#">The Podcast Network</a></h3>
-        <p class="date">Friday October 30th</p>
-        <h3> <a href="#">The Caleb Kivindyo Community</a> </h3>
-        <p class="date">Friday October 30th</p>
-        <h3><a href="#">The 30 in 30 Challenge</a></h3>
-        <p class="date">Friday October 30th</p>
-      </div>
+      <hr>
+          <% @projects.each do |project| %>
+             <h3> <a href="#"> <%= link_to project.title, project %> </a> </h3>
+             <p class="date"> <%= project.created_at.strftime("%A, %b, %d") %> </p>
+          <% end %>   
+
+
+    </div>
     </div>
