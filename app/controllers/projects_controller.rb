@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 
-  before_action :find_project, only: [:show, :edit, :update, :edit]
+  before_action :find_project, only: [:show, :edit, :update, :edit, :destroy]
 
   def index
     @projects = Project.all.order("created_at desc")
@@ -23,6 +23,22 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def edit 
+
+  end
+
+  def update 
+    if @project.update project_params 
+      redirect_to @project, notice: "The project was successfully updated"
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy 
+    @project.destroy 
+    redirect_to projects_path
+  end
   
   private 
 
