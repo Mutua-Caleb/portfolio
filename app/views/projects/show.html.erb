@@ -1,4 +1,27 @@
-<div id="post_show_content" class="skinny_wrapper wrapper_padding" >
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .project_button {
+	background: #8bc5db;
+	color: white;
+	text-decoration: none;
+	padding: 1em 2em;
+}
+
+.button_wrapper {
+	margin: 4em 0 0 0;
+	text-align: center;
+}
+  </style>
+
+</head>
+<body>
+  <div id="post_show_content" class="skinny_wrapper wrapper_padding" >
        <header>
          <p class="date"> <%= @project.created_at.strftime('%A, %B %d')%> </p>
          <h1> <%= @project.title %> </h1>
@@ -8,8 +31,10 @@
         <div id="content">
           <%= markdown @project.description %>
 
-          
+        <div class="button_wrapper">
           <a href="<%= @project.link %>" class="project_button" target="_blank">Visit <%= @project.title %></a>
+        </div>
+
 
         </div>
         <hr>
@@ -18,3 +43,5 @@
         <%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: "Are you sure?"}%>
         
 </div>
+</body>
+</html>
