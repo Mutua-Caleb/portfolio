@@ -10,6 +10,14 @@
         </div>
         <hr>
 
+        <% if user_signed_in? %>
+         <div id="admin_links">
+           <%= link_to "Edit Article", edit_post_path(@post) %>
+            <%= link_to "Delete Article", post_path(@post), method: :delete, data: {confirm: "Are you sure?"} %>
+         </div>
+         <% end %>
+
+         <hr>
         <div id="share_box">
           <p>Share The DO list</p>
               <a onclick="javascript:window.open('https://twitter.com/share?text=<%= @post.title %> by @calebkivindyo - &amp;url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="bi bi-twitter"></i></a>
@@ -24,4 +32,4 @@
         <%= render 'disqus' %>
      </div>
 
-     <%= link_to "Edit", edit_post_path(@post) %>
+   
