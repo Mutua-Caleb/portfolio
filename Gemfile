@@ -15,6 +15,7 @@ gem 'redcarpet', '~> 3.5', '>= 3.5.1'
 gem 'friendly_id', '~> 5.4', '>= 5.4.2'
 gem 'will_paginate', '~> 3.3', '>= 3.3.1'
 gem 'mail_form', '~> 1.9'
+gem 'devise', '~> 4.8'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
